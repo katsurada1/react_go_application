@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - 3002:3000
+    tty: true
+    volumes:
+      - ./frontend/package.json:/frontend/package.json
