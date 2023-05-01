@@ -8,5 +8,7 @@ services:
       - 3002:3000
     tty: true
     volumes:
+      - ./frontend/public:/frontend/public
+      - ./frontend/src:/frontend/src
       - ./frontend/package.json:/frontend/package.json
       - ./frontend/package-lock.json:/frontend/package-lock.json
