@@ -5,4 +5,5 @@ go get github.com/cweill/gotests/gotests \
     github.com/haya14busa/goplay/cmd/goplay \
     github.com/go-delve/delve/cmd/dlv \
     honnef.co/go/tools/cmd/staticcheck \
-    golang.org/x/tools/gopls
+    golang.org/x/tools/gopls \
+    github.com/julienschmidt/httprouter
