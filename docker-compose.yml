@@ -26,7 +26,8 @@ services:
       - ./frontend/package-lock.json:/frontend/package-lock.json
   
   postgres:
-    build: ./postgres
+    build:
+      context: ./postgres
     container_name: postgres
     environment:
       POSTGRES_USER: postgres
@@ -39,6 +40,6 @@ services:
     ports:
       - 5432:5432
     restart: always
-    # volumes:
+    volumes:
     #   - ./postgres/var/lib/postgresql/data:/var/lib/postgresql/data
-    #   - ./postgres/docker-entrypoint-initdb.d/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+      - ./postgres/docker-entrypoint-initdb.d/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
