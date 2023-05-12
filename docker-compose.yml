@@ -25,19 +25,20 @@ services:
       - ./frontend/package.json:/frontend/package.json
       - ./frontend/package-lock.json:/frontend/package-lock.json
   
-  # postgres:
-  #   build: ./postgres
-  #   environment:
-  #     POSTGRES_USER: postgres
-  #     POSTGRES_PASSWORD: postgres
-  #     POSTGRES_DB: movies
-  #   logging:
-  #     options:
-  #       max-size: 10m
-  #       max-file: "3"
-  #   ports:
-  #     - 5432:5432
-  #   restart: always
-  #   volumes:
-  #     - ./postgres/var/lib/postgresql/data:/var/lib/postgresql/data
-  #     - ./postgres/docker-entrypoint-initdb.d/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+  postgres:
+    build: ./postgres
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: movies
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      - 5432:5432
+    restart: always
+    # volumes:
+    #   - ./postgres/var/lib/postgresql/data:/var/lib/postgresql/data
+    #   - ./postgres/docker-entrypoint-initdb.d/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
